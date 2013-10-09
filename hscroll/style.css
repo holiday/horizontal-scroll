@@ -38,4 +38,17 @@ section > .container {
 		overflow-y:scroll;
 	}
 
+	section{
+		position: static;
+		display: block;
+	}
+
+	section > .container {
+		padding-bottom: 0px;
+	}
+
+	section.about .container, section.blog .container {
+		padding-top: 0px;
+	}
+
 }

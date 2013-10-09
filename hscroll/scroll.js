@@ -33,7 +33,7 @@ $(function(){
         }else{
         	$("section").each(function(i) {
         		$(this).css({'left': 0});
-            	$(this).css({'top': (i * h) - (currentPageIndex * h)});          
+            	//$(this).css({'top': (i * h) - (currentPageIndex * h)});          
         	}); 
         }
     }
@@ -49,19 +49,29 @@ $(function(){
 
 		var w = window.innerWidth;
 
-		if(page == 'page1'){
-			currentPageIndex = 0;
-			animateXTo(0);
-		}
+		if (w < 768) {
 
-		if(page == 'page2'){
-			currentPageIndex = 1;
-			animateXTo(1);
-		}
+			var clzz = $(this).attr('class');
 
-		if(page == 'page3'){
-			currentPageIndex = 2;
-			animateXTo(2);
+			var aTag = $("a[name='"+ clzz + "']");
+
+			$('html,body').animate({scrollTop: aTag.offset().top},'fast');
+
+		}else{
+			if(page == 'page1'){
+				currentPageIndex = 0;
+				animateXTo(0);
+			}
+
+			if(page == 'page2'){
+				currentPageIndex = 1;
+				animateXTo(1);
+			}
+
+			if(page == 'page3'){
+				currentPageIndex = 2;
+				animateXTo(2);
+			}
 		}
 	});
 
