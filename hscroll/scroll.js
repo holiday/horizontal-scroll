@@ -42,24 +42,15 @@ $(function(){
 		var w = window.innerWidth;
 
 		if(page == 'page1'){
-			$('section').each(function(i){
-				t1.to($(this), 1, {left: i * w});
-			});
-			t1.play();
+			TweenLite.to($('section'), 1, {left: i * w});
 		}
 
 		if(page == 'page2'){
-			$('section').each(function(i){
-				t1.to($(this), 1, {left: (i * w) - w});
-			});
-			t1.play();
+			TweenLite.to($('section'), 1, {left: (i * w) - w});
 		}
 
 		if(page == 'page3'){
-			$('section').each(function(i){
-				t1.to($(this), 1, {left: (i * w) - (2 * w)});
-			});
-			t1.play();
+			TweenLite.to($('section'), 1, {left: (i * w) - 2w});
 		}
 	})
 
