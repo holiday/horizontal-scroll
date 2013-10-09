@@ -1,9 +1,8 @@
 $(function(){
 
-	var currentPageClass = 'section.home';
 	var currentPageIndex = 0;
 
-	function animateTo(pageIndex){
+	function animateXTo(pageIndex){
 
 		var offsets = [];
 
@@ -22,13 +21,21 @@ $(function(){
 	*	Offsets each section tag so they are side by side
 	*/
 	function setSections() {
-
+		console.log("setting sections")
         var w = $(window).width();
+        var h = $(window).height();
 
-        $("section").each(function(i) {
-            $(this).css({'left': (i * w) - (currentPageIndex * w)});          
-        }); 
-    
+        if(w >= 768){
+        	$("section").each(function(i) {
+        		$(this).css({'top': 0});
+            	$(this).css({'left': (i * w) - (currentPageIndex * w)});          
+        	}); 
+        }else{
+        	$("section").each(function(i) {
+        		$(this).css({'left': 0});
+            	$(this).css({'top': (i * h) - (currentPageIndex * h)});          
+        	}); 
+        }
     }
 
     //each time the window resizes we need to set the section offsets again
@@ -44,24 +51,20 @@ $(function(){
 
 		if(page == 'page1'){
 			currentPageIndex = 0;
-			animateTo(0);
+			animateXTo(0);
 		}
 
 		if(page == 'page2'){
 			currentPageIndex = 1;
-			animateTo(1);
+			animateXTo(1);
 		}
 
 		if(page == 'page3'){
 			currentPageIndex = 2;
-			animateTo(2);
+			animateXTo(2);
 		}
 	});
 
-	$('section.about').scroll(function(){
-		var x = $(this).scrollTop();
-	});
-
-	//first time section offset setup
 	setSections();
+	
 });

@@ -30,3 +30,12 @@ section .container {
 section > .container {
 	padding-bottom: 80px;
 }
+
+@media (max-width: 767px) {
+
+	html{
+		overflow-x:hidden;	
+		overflow-y:scroll;
+	}
+
+}
