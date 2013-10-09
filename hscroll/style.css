@@ -26,7 +26,3 @@ section .container {
 section > .container {
 	padding-bottom: 80px;
 }
-
-section.about {
-	background-color: red;
-}

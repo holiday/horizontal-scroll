@@ -1,56 +1,52 @@
 $(function(){
 
-	function isAppleMobile() {
-        if (navigator && navigator.userAgent && navigator.userAgent != null) {
-            var strUserAgent = navigator.userAgent.toLowerCase();
-            var arrMatches = strUserAgent.match(/(iphone|ipod|ipad)/);
-            if (arrMatches) 
-                 return true;
-        } 
 
-        return false;
-    }
-
-	var isAppleMobile = isAppleMobile(), wWidth = $(window).width(), mobileRes = 0;
+	var currentPageIndex = 0;
 
 	/**
 	*	Offsets each section tag so they are side by side
 	*/
 	function setSections() {
-        var sections = $("section"),
-            wWidth = $(window).width(),
-            wHeight = $(window).height(),
-            wCounter = 0;
 
-            $.each(sections, function(eq) {
-                $(this).css({'left': eq * wWidth});           
-            }); 
+        var w = $(window).width();
+
+        $("section").each(function(i) {
+            $(this).css({'left': (i * w) - (currentPageIndex * w)});          
+        }); 
     
     }
 
     //each time the window resizes we need to set the section offsets again
 	$(window).bind('resize', function(){
-		setSections();
+		//setSections();
 	});
 
 	//listen for menu clicks and slide to the specified section
 	$('.navbar ul li a').click(function(){
 		var page = $(this).attr('class');
 
-		var t1 = new TimelineLite();
 
 		var w = window.innerWidth;
 
 		if(page == 'page1'){
-			TweenLite.to($('section'), 1, {left: i * w});
+			currentPageIndex = 0;
+			TweenLite.to($('section.home'), 0.5, {left: 0});
+			TweenLite.to($('section.about'), 0.5, {left: w});
+			TweenLite.to($('section.blog'), 0.5, {left: 2 * w});
 		}
 
 		if(page == 'page2'){
-			TweenLite.to($('section'), 1, {left: (i * w) - w});
+			currentPageIndex = 1;
+			TweenLite.to($('section.home'), 0.5, {left: -w});
+			TweenLite.to($('section.about'), 0.5, {left: 0});
+			TweenLite.to($('section.blog'), 0.5, {left: w});
 		}
 
 		if(page == 'page3'){
-			TweenLite.to($('section'), 1, {left: (i * w) - 2w});
+			currentPageIndex = 2;
+			TweenLite.to($('section.home'), 0.5, {left: -2 * w});
+			TweenLite.to($('section.about'), 0.5, {left: -w});
+			TweenLite.to($('section.blog'), 0.5, {left: 0});
 		}
 	})
 
