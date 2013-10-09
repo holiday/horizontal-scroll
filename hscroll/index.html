@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+	
+	<script src="greensock-v12-js/src/minified/TweenMax.min.js"></script>
+	<script type="text/javascript" src="scroll.js"></script>
+	<script src="jquery.event.special.js"></script>
+	<script src="jquery.easing.min.js"></script>
+	<script src="jquery.scrollsnap.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $(document).scrollsnap({
+	        snaps: '.snap',
+	        proximity: 50
+	    });
+	});
+	</script>
+	
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -10,10 +29,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
-	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="greensock-v12-js/src/minified/TweenMax.min.js"></script>
-	<script type="text/javascript" src="scroll.js"></script>
+
 </head>
 <body>
 
@@ -50,7 +66,7 @@
 				<a href="http://reversal.themes.pixelentity.com/#portfolio" class="button float-right content-menu-link">Check our Works</a>			
 			</div>
 			<div class="span12"><hr class="fancy-hr"></div>	
-		</div>				
+		</div>
 	</section>
 
 	<section class="about">
