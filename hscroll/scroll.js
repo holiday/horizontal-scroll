@@ -83,7 +83,11 @@ $(function(){
 
 
 
-	// Nav Style
+	/**
+	*	Nav Active Style..
+	*	Removes current active styles and appends active
+	*	to the correct li element.
+	*/
 	function setActive(nav_id, current_index){
 		var link = $(nav_id + " li");
 		for(var i = 0; i < link.length; i++){
@@ -93,6 +97,20 @@ $(function(){
 				link.eq(i).removeClass("active");
 		}
 	}
-
 	
+
+
+	/**
+	*	
+	*	Removes current active styles and appends active
+	*	to the correct li element.
+	*/
+	
+	$(document).ready(function(){
+		var rootname = window.location.pathname;
+		var pathname = $(location).attr('href');
+
+		console.log("root " + rootname);
+		console.log("full " + pathname);
+	});
 });
