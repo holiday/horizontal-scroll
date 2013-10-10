@@ -4,6 +4,8 @@ $(function(){
 
 	function animateXTo(pageIndex){
 
+		setActive("#nav-bar", pageIndex);
+
 		var offsets = [];
 
 		var w = $(window).width();
@@ -11,7 +13,7 @@ $(function(){
 		$('section').each(function(i){
 			offsets.push((i * w) - (pageIndex * w));
 		});
-
+		
 		TweenLite.to($('section.home'), 0.5, {left: offsets[0]});
 		TweenLite.to($('section.about'), 0.5, {left: offsets[1]});
 		TweenLite.to($('section.blog'), 0.5, {left: offsets[2]});
@@ -76,5 +78,21 @@ $(function(){
 	});
 
 	setSections();
+
+
+
+
+
+	// Nav Style
+	function setActive(nav_id, current_index){
+		var link = $(nav_id + " li");
+		for(var i = 0; i < link.length; i++){
+			if(i == current_index)
+				link.eq(i).addClass("active");
+			else
+				link.eq(i).removeClass("active");
+		}
+	}
+
 	
 });
