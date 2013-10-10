@@ -1,6 +1,8 @@
 $(function(){
 
 	var currentPageIndex = 0;
+	var currentPageHash = window.location.hash;
+	var navSelector = '.navbar';
 
 	function animateXTo(pageIndex){
 
@@ -55,25 +57,23 @@ $(function(){
 		setSections();
 	});
 
-	//listen for menu clicks and slide to the specified section
-	$('.navbar ul li').click(function(){
+	//listen for hash
 
-		$('.navbar-toggle').click();
+	//listen for menu clicks and slide to the specified section
+	$(navSelector).find('ul li').click(function(){
 
 		var pageNum = $(this).attr('class').split('-')[1];
 
 		var w = window.innerWidth;
 
 		if (w < 768) {
+			$('.navbar-toggle').click();
 			var aTag = $("a[name='page-"+ pageNum + "']");
 			$('html,body').animate({scrollTop: aTag.offset().top},'fast');
 		}else{
-
 			currentPageIndex = pageNum - 1;
 			animateXTo(currentPageIndex);
 		}
-
-
 	});
 
 	setSections();
