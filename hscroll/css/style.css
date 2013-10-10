@@ -1,0 +1,50 @@
+html {
+	overflow: hidden;
+}
+
+body {
+	line-height: 1;
+	color: #555555;
+	font: 13px/24px "Open Sans", Helvetica, Arial, sans-serif;
+	background: green;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+section {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 50;
+	overflow: auto;
+	background: #fff;
+	-webkit-overflow-scrolling: touch;
+}
+
+section .container {
+	padding-top: 50px;	
+}
+
+section > .container {
+	padding-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+
+	html{
+		overflow-x:hidden;	
+		overflow:visible;
+	}
+
+	section{
+		position: static;
+		display: block;
+	}
+
+	section > .container {
+		padding-bottom: 0px;
+	}
+
+}
