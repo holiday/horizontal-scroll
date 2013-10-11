@@ -3,10 +3,6 @@ html {
 }
 
 body {
-	line-height: 1;
-	color: #555555;
-	font: 13px/24px "Open Sans", Helvetica, Arial, sans-serif;
-	background: green;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 	overflow-x: hidden;
@@ -19,7 +15,6 @@ section {
 	position: absolute;
 	z-index: 50;
 	overflow: auto;
-	background: #fff;
 	-webkit-overflow-scrolling: touch;
 }
 
