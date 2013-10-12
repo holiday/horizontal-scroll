@@ -1,0 +1,74 @@
+html{
+	overflow: hidden;
+}
+
+body{
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+section{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+@media(max-width: 767px){
+	html{
+		overflow-x: hidden;
+		overflow: visible;
+	}
+	section{
+		position: static;
+		display: block;
+		padding-top: 50px;
+	}
+}
+
+/********************************/
+/* Navigation styles (non-important) */
+/********************************/
+nav{
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	z-index: 9999;
+	background-color: black;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin:0;
+}
+
+nav ul li {
+	float: left;
+}
+
+nav ul li a {
+	padding-left: 20px;
+	line-height: 40px;
+	text-decoration: none;
+	color: #fff;
+}
+
+/*******************************************/
+/* Slidable section styles (non-important) */
+/*******************************************/
+section#home{
+	background-color: red;
+}
+
+section#ebook{
+	background-color: green;
+}
+
+section#services {
+	background-color: orange;
+}
