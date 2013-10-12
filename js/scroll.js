@@ -98,6 +98,7 @@ $(function(){
 		if(isMobile()){
 			currentHash = $(this).attr('href');
 			animateToAnchor(currentHash);
+            window.location.hash = currentHash;
 			return false;
 		}
 	});
