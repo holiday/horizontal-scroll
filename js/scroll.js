@@ -105,5 +105,7 @@ $(function(){
 	
 	//set the default positions of the sections
 	setSections();
-	//animatePage(window.location.hash);
+
+    //if were in mobile view and we loaded on a hash, scroll to that location
+	if(isMobile() && currentHash){ animateToAnchor(currentHash); }
 });
