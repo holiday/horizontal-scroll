@@ -30,33 +30,7 @@ section{
 	}
 }
 
-/********************************/
-/* Navigation styles (non-important) */
-/********************************/
-nav{
-	position: fixed;
-	width: 100%;
-	height: 40px;
-	z-index: 9999;
-	background-color: black;
-}
 
-nav ul {
-	list-style-type: none;
-	padding: 0;
-	margin:0;
-}
-
-nav ul li {
-	float: left;
-}
-
-nav ul li a {
-	padding-left: 20px;
-	line-height: 40px;
-	text-decoration: none;
-	color: #fff;
-}
 
 /*******************************************/
 /* Slidable section styles (non-important) */
